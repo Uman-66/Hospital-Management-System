@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "iN6V4xG0mA8=",
+  "success": true,
+  "projectFilePath": "E:\\solved vs community\\Hospital-Management\\Hospital-Management.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Uman\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.119\\stub.system.data.sqlite.core.netstandard.1.0.119.nupkg.sha512",
+    "C:\\Users\\Uman\\.nuget\\packages\\system.data.sqlite.core\\1.0.119\\system.data.sqlite.core.1.0.119.nupkg.sha512"
+  ],
+  "logs": []
+}

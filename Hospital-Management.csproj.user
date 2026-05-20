@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Forms\AddAssignmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AddDoctorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AdmitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AssignmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\BillingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DoctorDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DoctorHomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DoctorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\EditDoctorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\EditPatientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\loginform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PatientBillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PatientDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PatientHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PatientInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PatientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PrescribeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
