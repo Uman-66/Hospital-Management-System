@@ -16,6 +16,7 @@ namespace Hospital_Management.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(loginform));
+
             pnlHeader = new Panel();
             pnlCross = new Panel();
             pnlCrossH = new Panel();
@@ -29,80 +30,68 @@ namespace Hospital_Management.Forms
             lblPasswordHint = new Label();
             txtPassword = new TextBox();
             btnLogin = new Button();
+
             pnlHeader.SuspendLayout();
             pnlCross.SuspendLayout();
             pnlForm.SuspendLayout();
             SuspendLayout();
-            // 
+
             // pnlHeader
-            // 
-            pnlHeader.BackColor = Color.FromArgb(12, 44, 80);
+            pnlHeader.BackColor = System.Drawing.Color.FromArgb(18, 22, 40);
             pnlHeader.Controls.Add(pnlCross);
             pnlHeader.Controls.Add(lblHospitalName);
             pnlHeader.Controls.Add(lblSubtitle);
             pnlHeader.Dock = DockStyle.Top;
-            pnlHeader.Location = new Point(0, 0);
-            pnlHeader.Margin = new Padding(4, 5, 4, 5);
+            pnlHeader.Location = new System.Drawing.Point(0, 0);
             pnlHeader.Name = "pnlHeader";
-            pnlHeader.Size = new Size(629, 300);
+            pnlHeader.Size = new System.Drawing.Size(520, 280);
             pnlHeader.TabIndex = 0;
-            // 
+
             // pnlCross
-            // 
-            pnlCross.BackColor = Color.Transparent;
+            pnlCross.BackColor = System.Drawing.Color.Transparent;
             pnlCross.Controls.Add(pnlCrossH);
             pnlCross.Controls.Add(pnlCrossV);
-            pnlCross.Location = new Point(273, 37);
-            pnlCross.Margin = new Padding(4, 5, 4, 5);
+            pnlCross.Location = new System.Drawing.Point(220, 46);
             pnlCross.Name = "pnlCross";
-            pnlCross.Size = new Size(83, 97);
+            pnlCross.Size = new System.Drawing.Size(80, 80);
             pnlCross.TabIndex = 0;
-            // 
+
             // pnlCrossH
-            // 
-            pnlCrossH.BackColor = Color.FromArgb(181, 212, 244);
-            pnlCrossH.Location = new Point(0, 32);
-            pnlCrossH.Margin = new Padding(4, 5, 4, 5);
+            pnlCrossH.BackColor = System.Drawing.Color.FromArgb(99, 179, 237);
+            pnlCrossH.Location = new System.Drawing.Point(0, 27);
             pnlCrossH.Name = "pnlCrossH";
-            pnlCrossH.Size = new Size(83, 33);
+            pnlCrossH.Size = new System.Drawing.Size(80, 26);
             pnlCrossH.TabIndex = 0;
-            // 
+
             // pnlCrossV
-            // 
-            pnlCrossV.BackColor = Color.FromArgb(181, 212, 244);
-            pnlCrossV.Location = new Point(27, 0);
-            pnlCrossV.Margin = new Padding(4, 5, 4, 5);
+            pnlCrossV.BackColor = System.Drawing.Color.FromArgb(99, 179, 237);
+            pnlCrossV.Location = new System.Drawing.Point(27, 0);
             pnlCrossV.Name = "pnlCrossV";
-            pnlCrossV.Size = new Size(29, 97);
+            pnlCrossV.Size = new System.Drawing.Size(26, 80);
             pnlCrossV.TabIndex = 1;
-            // 
+
             // lblHospitalName
-            // 
-            lblHospitalName.Font = new Font("Segoe UI", 13F);
-            lblHospitalName.ForeColor = Color.FromArgb(230, 241, 251);
-            lblHospitalName.Location = new Point(0, 153);
-            lblHospitalName.Margin = new Padding(4, 0, 4, 0);
+            lblHospitalName.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold);
+            lblHospitalName.ForeColor = System.Drawing.Color.FromArgb(220, 225, 255);
+            lblHospitalName.Location = new System.Drawing.Point(0, 148);
             lblHospitalName.Name = "lblHospitalName";
-            lblHospitalName.Size = new Size(629, 50);
+            lblHospitalName.Size = new System.Drawing.Size(520, 42);
             lblHospitalName.TabIndex = 2;
             lblHospitalName.Text = "City Care Hospital";
-            lblHospitalName.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            lblHospitalName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
             // lblSubtitle
-            // 
-            lblSubtitle.Font = new Font("Segoe UI", 8.5F);
-            lblSubtitle.ForeColor = Color.FromArgb(181, 212, 244);
-            lblSubtitle.Location = new Point(0, 207);
-            lblSubtitle.Margin = new Padding(4, 0, 4, 0);
+            lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 8F);
+            lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(80, 95, 150);
+            lblSubtitle.Location = new System.Drawing.Point(0, 194);
             lblSubtitle.Name = "lblSubtitle";
-            lblSubtitle.Size = new Size(629, 33);
+            lblSubtitle.Size = new System.Drawing.Size(520, 26);
             lblSubtitle.TabIndex = 3;
             lblSubtitle.Text = "HOSPITAL MANAGEMENT SYSTEM";
-            lblSubtitle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            lblSubtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
             // pnlForm
-            // 
-            pnlForm.BackColor = Color.FromArgb(235, 243, 251);
+            pnlForm.BackColor = System.Drawing.Color.FromArgb(22, 27, 50);
             pnlForm.Controls.Add(lblTitle);
             pnlForm.Controls.Add(lblUsernameHint);
             pnlForm.Controls.Add(txtUsername);
@@ -110,107 +99,95 @@ namespace Hospital_Management.Forms
             pnlForm.Controls.Add(txtPassword);
             pnlForm.Controls.Add(btnLogin);
             pnlForm.Dock = DockStyle.Fill;
-            pnlForm.Location = new Point(0, 300);
-            pnlForm.Margin = new Padding(4, 5, 4, 5);
+            pnlForm.Location = new System.Drawing.Point(0, 280);
             pnlForm.Name = "pnlForm";
-            pnlForm.Size = new Size(629, 383);
+            pnlForm.Size = new System.Drawing.Size(520, 360);
             pnlForm.TabIndex = 1;
-            // 
+
             // lblTitle
-            // 
-            lblTitle.Font = new Font("Segoe UI", 11F);
-            lblTitle.ForeColor = Color.FromArgb(24, 95, 165);
-            lblTitle.Location = new Point(0, 33);
-            lblTitle.Margin = new Padding(4, 0, 4, 0);
+            lblTitle.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold);
+            lblTitle.ForeColor = System.Drawing.Color.FromArgb(210, 218, 255);
+            lblTitle.Location = new System.Drawing.Point(0, 28);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(629, 40);
+            lblTitle.Size = new System.Drawing.Size(520, 38);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Sign in to your account";
-            lblTitle.TextAlign = ContentAlignment.MiddleCenter;
-            // 
+            lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
             // lblUsernameHint
-            // 
-            lblUsernameHint.Font = new Font("Segoe UI", 8.5F);
-            lblUsernameHint.ForeColor = Color.FromArgb(24, 95, 165);
-            lblUsernameHint.Location = new Point(114, 87);
-            lblUsernameHint.Margin = new Padding(4, 0, 4, 0);
+            lblUsernameHint.Font = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Bold);
+            lblUsernameHint.ForeColor = System.Drawing.Color.FromArgb(80, 95, 150);
+            lblUsernameHint.Location = new System.Drawing.Point(80, 84);
             lblUsernameHint.Name = "lblUsernameHint";
-            lblUsernameHint.Size = new Size(400, 27);
+            lblUsernameHint.Size = new System.Drawing.Size(360, 18);
             lblUsernameHint.TabIndex = 1;
-            lblUsernameHint.Text = "Username";
-            // 
+            lblUsernameHint.Text = "USERNAME";
+
             // txtUsername
-            // 
-            txtUsername.BackColor = Color.White;
+            txtUsername.BackColor = System.Drawing.Color.FromArgb(30, 36, 66);
             txtUsername.BorderStyle = BorderStyle.FixedSingle;
-            txtUsername.Font = new Font("Segoe UI", 10F);
-            txtUsername.ForeColor = Color.FromArgb(20, 35, 60);
-            txtUsername.Location = new Point(114, 117);
-            txtUsername.Margin = new Padding(4, 5, 4, 5);
+            txtUsername.Font = new System.Drawing.Font("Segoe UI", 10F);
+            txtUsername.ForeColor = System.Drawing.Color.FromArgb(210, 215, 245);
+            txtUsername.Location = new System.Drawing.Point(80, 106);
             txtUsername.Name = "txtUsername";
             txtUsername.PlaceholderText = "Enter your username";
-            txtUsername.Size = new Size(399, 34);
+            txtUsername.Size = new System.Drawing.Size(360, 36);
             txtUsername.TabIndex = 2;
-            // 
+
             // lblPasswordHint
-            // 
-            lblPasswordHint.Font = new Font("Segoe UI", 8.5F);
-            lblPasswordHint.ForeColor = Color.FromArgb(24, 95, 165);
-            lblPasswordHint.Location = new Point(114, 187);
-            lblPasswordHint.Margin = new Padding(4, 0, 4, 0);
+            lblPasswordHint.Font = new System.Drawing.Font("Segoe UI", 7.5F, System.Drawing.FontStyle.Bold);
+            lblPasswordHint.ForeColor = System.Drawing.Color.FromArgb(80, 95, 150);
+            lblPasswordHint.Location = new System.Drawing.Point(80, 162);
             lblPasswordHint.Name = "lblPasswordHint";
-            lblPasswordHint.Size = new Size(400, 27);
+            lblPasswordHint.Size = new System.Drawing.Size(360, 18);
             lblPasswordHint.TabIndex = 3;
-            lblPasswordHint.Text = "Password";
-            // 
+            lblPasswordHint.Text = "PASSWORD";
+
             // txtPassword
-            // 
-            txtPassword.BackColor = Color.White;
+            txtPassword.BackColor = System.Drawing.Color.FromArgb(30, 36, 66);
             txtPassword.BorderStyle = BorderStyle.FixedSingle;
-            txtPassword.Font = new Font("Segoe UI", 10F);
-            txtPassword.ForeColor = Color.FromArgb(20, 35, 60);
-            txtPassword.Location = new Point(114, 217);
-            txtPassword.Margin = new Padding(4, 5, 4, 5);
+            txtPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
+            txtPassword.ForeColor = System.Drawing.Color.FromArgb(210, 215, 245);
+            txtPassword.Location = new System.Drawing.Point(80, 184);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.PlaceholderText = "Enter your password";
-            txtPassword.Size = new Size(399, 34);
+            txtPassword.Size = new System.Drawing.Size(360, 36);
             txtPassword.TabIndex = 4;
-            // 
+
             // btnLogin
-            // 
-            btnLogin.BackColor = Color.FromArgb(24, 95, 165);
+            btnLogin.BackColor = System.Drawing.Color.FromArgb(37, 99, 180);
             btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatAppearance.BorderSize = 0;
+            btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(28, 78, 150);
             btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Font = new Font("Segoe UI", 10F);
-            btnLogin.ForeColor = Color.FromArgb(230, 241, 251);
-            btnLogin.Location = new Point(114, 293);
-            btnLogin.Margin = new Padding(4, 5, 4, 5);
+            btnLogin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            btnLogin.ForeColor = System.Drawing.Color.White;
+            btnLogin.Location = new System.Drawing.Point(80, 258);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(400, 60);
+            btnLogin.Size = new System.Drawing.Size(360, 52);
             btnLogin.TabIndex = 5;
-            btnLogin.Text = "Log In";
+            btnLogin.Text = "Sign In";
             btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.Click += btnLogin_Click;
-            // 
-            // loginform
-            // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+
+            // Form
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(235, 243, 251);
-            ClientSize = new Size(629, 683);
+            BackColor = System.Drawing.Color.FromArgb(18, 22, 40);
+            ClientSize = new System.Drawing.Size(520, 640);
             Controls.Add(pnlForm);
             Controls.Add(pnlHeader);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(4, 5, 4, 5);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "loginform";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "City Care Hospital";
+            Load += new System.EventHandler(this.loginform_Load);
+
             pnlHeader.ResumeLayout(false);
             pnlCross.ResumeLayout(false);
             pnlForm.ResumeLayout(false);

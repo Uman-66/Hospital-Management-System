@@ -95,5 +95,10 @@ namespace Hospital_Management.Forms
                 lblTotalPrescriptions.Text = "Prescriptions: " + totalPrescriptions.ToString();
             }
         }
+
+        private void pnlStatWard_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

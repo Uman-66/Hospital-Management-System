@@ -327,6 +327,7 @@
             pnlStatWard.Name = "pnlStatWard";
             pnlStatWard.Size = new Size(348, 150);
             pnlStatWard.TabIndex = 2;
+            pnlStatWard.Paint += pnlStatWard_Paint;
             // 
             // lblStatWard
             // 
