@@ -53,6 +53,23 @@ namespace Hospital_Management.Databases
             return dt;
         }
 
+        public static void DeleteDoctor(int doctorID)
+        {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string deleteDoctor = "DELETE FROM Doctors WHERE DoctorID = @id";
+                var cmd = new SQLiteCommand(deleteDoctor, conn);
+                cmd.Parameters.AddWithValue("@id", doctorID);
+                cmd.ExecuteNonQuery();
+                string deleteUser = @"DELETE FROM Users WHERE UserID = 
+                                        (SELECT UserID FROM Doctors WHERE DoctorID = @id)";
+                var cmd2 = new SQLiteCommand(deleteUser, conn);
+                cmd2.Parameters.AddWithValue("@id", doctorID);
+                cmd2.ExecuteNonQuery();
+            }
+        }
+
         public static DataTable GetDoctorDetails(int doctorID)
         {
             DataTable dt = new DataTable();

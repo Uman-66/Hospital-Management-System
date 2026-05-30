@@ -31,6 +31,7 @@
             txtSalary = new TextBox();
             pnlFooter = new Panel();
             btnSave = new Button();
+            btnDischarge = new Button();
             pnlHeader.SuspendLayout();
             pnlFooter.SuspendLayout();
             SuspendLayout();
@@ -190,6 +191,7 @@
             // pnlFooter
             // 
             pnlFooter.BackColor = Color.FromArgb(235, 243, 251);
+            pnlFooter.Controls.Add(btnDischarge);
             pnlFooter.Controls.Add(btnSave);
             pnlFooter.Dock = DockStyle.Bottom;
             pnlFooter.Location = new Point(0, 564);
@@ -215,6 +217,24 @@
             btnSave.Text = "Save Changes";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
+            // 
+            // btnDischarge
+            // 
+            btnDischarge.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnDischarge.BackColor = Color.FromArgb(163, 45, 45);
+            btnDischarge.Cursor = Cursors.Hand;
+            btnDischarge.FlatAppearance.BorderSize = 0;
+            btnDischarge.FlatStyle = FlatStyle.Flat;
+            btnDischarge.Font = new Font("Segoe UI", 9.5F);
+            btnDischarge.ForeColor = Color.FromArgb(252, 235, 235);
+            btnDischarge.Location = new Point(467, 18);
+            btnDischarge.Margin = new Padding(4, 5, 4, 5);
+            btnDischarge.Name = "btnDischarge";
+            btnDischarge.Size = new Size(157, 57);
+            btnDischarge.TabIndex = 2;
+            btnDischarge.Text = "Fire";
+            btnDischarge.UseVisualStyleBackColor = false;
+            btnDischarge.Click += btnDischarge_Click;
             // 
             // EditDoctorForm
             // 
@@ -267,5 +287,6 @@
         private TextBox txtSalary;
         private Panel pnlFooter;
         private Button btnSave;
+        private Button btnDischarge;
     }
 }

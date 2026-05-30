@@ -89,5 +89,33 @@ namespace Hospital_Management.Forms
         {
 
         }
+
+        private void lblSubtitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            txtUsername.Text = "admin";
+            txtPassword.Text = "1234";
+        }
+
+        private void doctorButton_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "sara.ali";
+            txtPassword.Text = "1234";
+        }
+
+        private void patientButton_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "ali.raza";
+            txtPassword.Text = "1234";
+        }
     }
 }

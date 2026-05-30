@@ -56,5 +56,22 @@ namespace Hospital_Management.Forms
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
+
+        private void btnDischarge_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Are you sure you want to discharge this doctor?", "Confirm Discharge", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                try
+                {
+                    DoctorDB.DeleteDoctor(_doctorID);
+                    MessageBox.Show("Doctor discharged successfully!");
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
     }
 }
