@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Hospital_Management.Databases;
-
+using System.Data.SQLite;
 namespace Hospital_Management.Forms
 {
     public partial class PatientDashboard : Form
@@ -12,8 +12,23 @@ namespace Hospital_Management.Forms
         {
             InitializeComponent();
             _userID = userID;
+            LoadWelcomeMessage();
         }
-
+        private void LoadWelcomeMessage()
+        {
+            using (var conn = DatabaseHelper.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT Name FROM Users WHERE UserID = @id";
+                var cmd = new SQLiteCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", _userID);
+                var reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    namelabl.Text  = reader["Name"].ToString()+ " !";
+                }
+            }
+        }
         private void LoadFormIntoPanel(Form form)
         {
             pnlMain.Controls.Clear();
@@ -41,6 +56,11 @@ namespace Hospital_Management.Forms
         {
             this.Hide();
             new loginform().Show();
+        }
+
+        private void welcome_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
