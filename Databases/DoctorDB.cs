@@ -6,12 +6,15 @@ namespace Hospital_Management.Databases
 {
     public class DoctorDB
     {
+        // Helper class for doctor-related database operations. Methods return
+        // DataTable for UI binding and perform parameterized queries.
         public static DataTable GetAllDoctors()
         {
             DataTable dt = new DataTable();
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Retrieve doctors with their user names and ward names
                 string query = @"
                     SELECT 
                         d.DoctorID,
@@ -34,6 +37,7 @@ namespace Hospital_Management.Databases
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Search doctors by name or id (partial match)
                 string query = @"
                     SELECT 
                         d.DoctorID,
@@ -58,6 +62,7 @@ namespace Hospital_Management.Databases
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Deleting a doctor then remove the linked user record as well
                 string deleteDoctor = "DELETE FROM Doctors WHERE DoctorID = @id";
                 var cmd = new SQLiteCommand(deleteDoctor, conn);
                 cmd.Parameters.AddWithValue("@id", doctorID);
@@ -76,6 +81,7 @@ namespace Hospital_Management.Databases
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Fetch detailed doctor record by doctorID for editing/viewing
                 string query = @"
                     SELECT 
                         d.DoctorID,
@@ -102,6 +108,7 @@ namespace Hospital_Management.Databases
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Create user then doctor record referencing the new user id
                 string insertUser = "INSERT INTO Users (Name, Username, Password, Role) VALUES (@name, @username, @password, 'Doctor')";
                 var cmd = new SQLiteCommand(insertUser, conn);
                 cmd.Parameters.AddWithValue("@name", name);
@@ -127,12 +134,14 @@ namespace Hospital_Management.Databases
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Update the related user name using a subquery mapping doctor to user
                 string updateUser = "UPDATE Users SET Name = @name WHERE UserID = (SELECT UserID FROM Doctors WHERE DoctorID = @id)";
                 var cmd = new SQLiteCommand(updateUser, conn);
                 cmd.Parameters.AddWithValue("@name", name);
                 cmd.Parameters.AddWithValue("@id", doctorID);
                 cmd.ExecuteNonQuery();
 
+                // Update doctor-specific fields
                 string updateDoctor = @"UPDATE Doctors SET Specialization = @spec, WardID = @ward, 
                                         MonthlySalary = @salary WHERE DoctorID = @id";
                 var cmd2 = new SQLiteCommand(updateDoctor, conn);

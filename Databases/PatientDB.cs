@@ -6,12 +6,16 @@ namespace Hospital_Management.Databases
 {
     public class PatientDB
     {
+        // Helper class for patient-related database operations.
+        // Methods return DataTable for use in UI data binding and perform parameterized
+        // queries to avoid SQL injection.
         public static DataTable GetAllPatients()
         {
             DataTable dt = new DataTable();
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Retrieve basic patient info joined with user and ward names
                 string query = @"
                     SELECT 
                         p.PatientID,
@@ -37,6 +41,7 @@ namespace Hospital_Management.Databases
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Search patients by name or id (partial match)
                 string query = @"
                     SELECT 
                         p.PatientID,
@@ -65,6 +70,7 @@ namespace Hospital_Management.Databases
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Fetch detailed patient record by patientID for edit/view operations
                 string query = @"
                     SELECT 
                         p.PatientID,
@@ -94,6 +100,7 @@ namespace Hospital_Management.Databases
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Insert user record first, then patient record referencing the new user id
                 string insertUser = "INSERT INTO Users (Name, Username, Password, Role) VALUES (@name, @username, @password, 'Patient')";
                 var cmd = new SQLiteCommand(insertUser, conn);
                 cmd.Parameters.AddWithValue("@name", name);
@@ -105,6 +112,7 @@ namespace Hospital_Management.Databases
 
                 string insertPatient = @"INSERT INTO Patients (UserID, Age, Gender, WardID, BedNumber, AdmitDate, PerNightCharge) 
                                          VALUES (@uid, @age, @gender, @ward, @bed, @date, @charge)";
+                // Use parameterized insert to avoid SQL injection and formatting issues
                 var cmd2 = new SQLiteCommand(insertPatient, conn);
                 cmd2.Parameters.AddWithValue("@uid", userID);
                 cmd2.Parameters.AddWithValue("@age", age);
@@ -122,12 +130,14 @@ namespace Hospital_Management.Databases
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Update the related user name using subquery to map patient to user
                 string updateUser = "UPDATE Users SET Name = @name WHERE UserID = (SELECT UserID FROM Patients WHERE PatientID = @id)";
                 var cmd = new SQLiteCommand(updateUser, conn);
                 cmd.Parameters.AddWithValue("@name", name);
                 cmd.Parameters.AddWithValue("@id", patientID);
                 cmd.ExecuteNonQuery();
 
+                // Update patient-specific fields
                 string updatePatient = @"UPDATE Patients SET Age = @age, Gender = @gender, WardID = @ward, 
                                          BedNumber = @bed, PerNightCharge = @charge WHERE PatientID = @id";
                 var cmd2 = new SQLiteCommand(updatePatient, conn);
@@ -146,6 +156,7 @@ namespace Hospital_Management.Databases
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Removing patient will cascade to related user due to FK ON DELETE CASCADE
                 string query = "DELETE FROM Patients WHERE PatientID = @id";
                 var cmd = new SQLiteCommand(query, conn);
                 cmd.Parameters.AddWithValue("@id", patientID);

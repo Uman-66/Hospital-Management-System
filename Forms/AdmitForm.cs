@@ -13,7 +13,8 @@ namespace Hospital_Management.Forms
             LoadWards();
             LoadGenders();
         }
-
+        // Populate ward dropdown from database
+        // This keeps the UI in sync with configured wards in DB
         private void LoadWards()
         {
             DataTable wards = PatientDB.GetWards();
@@ -21,13 +22,13 @@ namespace Hospital_Management.Forms
             cmbWard.DisplayMember = "WardName";
             cmbWard.ValueMember = "WardID";
         }
-
+        // Populate gender choices (static list)
         private void LoadGenders()
         {
             cmbGender.Items.AddRange(new[] { "Male", "Female", "Other" });
             cmbGender.SelectedIndex = 0;
         }
-
+        // Validate inputs and call PatientDB.AdmitPatient to persist a new patient
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtName.Text.Trim() == "" || txtUsername.Text.Trim() == "" ||
@@ -57,6 +58,7 @@ namespace Hospital_Management.Forms
             }
             catch (Exception ex)
             {
+                // Surface DB or parsing errors to the user
                 MessageBox.Show("Error: " + ex.Message);
             }
         }

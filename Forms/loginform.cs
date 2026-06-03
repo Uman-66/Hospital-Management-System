@@ -18,15 +18,18 @@ namespace Hospital_Management.Forms
             string password = txtPassword.Text.Trim();
 
 
+            // Basic validation: ensure both fields filled
             if (username == "" || password == "")
             {
                 MessageBox.Show("Please enter both username and password.", "Warning");
                 return;
             }
 
+            // Check credentials and determine role (Admin/Doctor/Patient)
             string role = CheckLogin(username, password);
 
 
+            // If credentials invalid, notify user
             if (role == null)
             {
                 MessageBox.Show("Incorrect username or password.", "Login Failed");
@@ -35,6 +38,7 @@ namespace Hospital_Management.Forms
 
             this.Hide();
 
+            // Open role-specific dashboard
             if (role == "Admin")
             {
                 new AdminDashboard().Show();
@@ -53,6 +57,7 @@ namespace Hospital_Management.Forms
                 }
                 catch (Exception ex)
                 {
+                    // Defensive: show any unexpected error retrieving user id
                     MessageBox.Show("Error: " + ex.Message);
                     this.Show();
                 }
@@ -64,6 +69,7 @@ namespace Hospital_Management.Forms
             using (var conn = DatabaseHelper.GetConnection())
             {
                 conn.Open();
+                // Parameterized query to verify credentials and return role
                 string query = "SELECT Role FROM Users WHERE Username = @u AND Password = @p";
                 var cmd = new SQLiteCommand(query, conn);
                 cmd.Parameters.AddWithValue("@u", username);
