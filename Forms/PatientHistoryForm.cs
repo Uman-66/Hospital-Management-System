@@ -15,7 +15,7 @@ namespace Hospital_Management.Forms
             InitializeComponent();
             _doctorID = doctorID;
         }
-
+        //Search The patients by name or ID and display the results in the DataGridView
         private void btnSearch_Click(object sender, EventArgs e)
         {
             string keyword = txtSearch.Text.Trim();
@@ -55,7 +55,7 @@ namespace Hospital_Management.Forms
                 dgvPatient.DataSource = dt;
             }
         }
-
+        //Show the details of the selected patient in the labels and load it
         private void dgvPatient_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -73,7 +73,7 @@ namespace Hospital_Management.Forms
                 LoadPrescriptions(patientID);
             }
         }
-
+        //Prescriptions Loaded 
         private void LoadPrescriptions(int patientID)
         {
             using (var conn = DatabaseHelper.GetConnection())

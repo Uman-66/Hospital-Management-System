@@ -9,6 +9,7 @@ namespace Hospital_Management.Databases
         // Helper class for doctor-related database operations. Methods return
         // DataTable for UI binding and perform parameterized queries.
         public static DataTable GetAllDoctors()
+            //Show All Doctors
         {
             DataTable dt = new DataTable();
             using (var conn = DatabaseHelper.GetConnection())

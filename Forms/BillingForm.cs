@@ -24,7 +24,7 @@ namespace Hospital_Management.Forms
             }
             dgvBilling.DataSource = BillingDB.GetAllBilling();
         }
-
+        //Refresh the billing data when the form loads
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             LoadBilling();

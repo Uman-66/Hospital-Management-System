@@ -19,7 +19,7 @@ namespace Hospital_Management.Forms
             _doctorID = GetDoctorID(userID);
             ShowHome();
         }
-
+        //Get The doctor ID based on the logged in user ID,
         private int GetDoctorID(int userID)
         {
             using (var conn = DatabaseHelper.GetConnection())
@@ -30,7 +30,7 @@ namespace Hospital_Management.Forms
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
-
+        //Load the form in the main panel and set the properties 
         private void LoadFormIntoPanel(Form form)
         {
             pnlMain.Controls.Clear();

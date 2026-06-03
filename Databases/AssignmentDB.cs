@@ -3,6 +3,8 @@ using System.Data;
 using System.Data.SQLite;
 
 namespace Hospital_Management.Databases
+
+    //Load all assgihmnets
 {
     public class AssignmentDB
     {
@@ -32,7 +34,7 @@ namespace Hospital_Management.Databases
             }
             return dt;
         }
-
+        //Insert a New Assighmnet
         public static void AddAssignment(int patientID, int doctorID, string meetingTime)
         {
             using (var conn = DatabaseHelper.GetConnection())
@@ -47,7 +49,7 @@ namespace Hospital_Management.Databases
                 cmd.ExecuteNonQuery();
             }
         }
-
+        //Update Values of Assignment
         public static void UpdateAssignment(int assignmentID, int doctorID, string meetingTime)
         {
             using (var conn = DatabaseHelper.GetConnection())
@@ -62,7 +64,7 @@ namespace Hospital_Management.Databases
                 cmd.ExecuteNonQuery();
             }
         }
-
+        //Search for patient
         public static DataTable GetPatients()
         {
             DataTable dt = new DataTable();

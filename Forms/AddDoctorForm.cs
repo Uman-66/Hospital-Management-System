@@ -10,6 +10,7 @@ namespace Hospital_Management.Forms
         public AddDoctorForm()
         {
             InitializeComponent();
+            //Load wards into ComboBox
             LoadWards();
         }
 
@@ -20,6 +21,7 @@ namespace Hospital_Management.Forms
             cmbWard.DisplayMember = "WardName";
             cmbWard.ValueMember = "WardID";
         }
+        //SaveFileDialog button functionality: Validates input and saves the new doctor to the database
 
         private void btnSave_Click(object sender, EventArgs e)
         {

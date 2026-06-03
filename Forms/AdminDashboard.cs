@@ -29,9 +29,9 @@ namespace Hospital_Management.Forms
             // Make sure home panel is visible and bring to front
             pnlHome.Visible = true;
             pnlHome.BringToFront();
-            pnlMain.Visible = true; // parent panel must be visible
+            pnlMain.Visible = true; 
 
-            // Update stats (already done in your existing ShowHome code)
+            // Update stats 
 
 
             lblTotalPatients.Text = "Total Patients: " + GetCount("SELECT COUNT(*) FROM Patients");
@@ -73,7 +73,7 @@ namespace Hospital_Management.Forms
                 return Convert.ToInt32(new SQLiteCommand(query, conn).ExecuteScalar());
             }
         }
-
+        //Load the form and remove previous form if exists
         private void LoadFormIntoPanel(Form form)
         {
             // Hide home panel

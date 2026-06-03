@@ -15,7 +15,7 @@ namespace Hospital_Management.Forms
             _userID = userID;
             LoadBill();
         }
-
+        //Load the bill details for the logged in patient and display them 
         private void LoadBill()
         {
             using (var conn = DatabaseHelper.GetConnection())

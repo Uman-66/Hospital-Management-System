@@ -7,7 +7,7 @@ namespace Hospital_Management.Databases
     {
         private static string dbPath = "HospitalDB.sqlite";
         private static string connectionString = $"Data Source={dbPath};Version=3;Journal Mode=WAL;";
-
+        //Set Connection
         public static SQLiteConnection GetConnection()
         {
             return new SQLiteConnection(connectionString);
@@ -15,6 +15,7 @@ namespace Hospital_Management.Databases
 
         public static void InitializeDatabase()
         {
+            //Creatiing Database
             using (var conn = GetConnection())
             {
                 conn.Open();
@@ -149,7 +150,7 @@ namespace Hospital_Management.Databases
                 SeedData(conn);
             }
         }
-
+        //Adding Default Values For testing
         private static void SeedData(SQLiteConnection conn)
         {
             if ((long)new SQLiteCommand("SELECT COUNT(*) FROM Doctors", conn).ExecuteScalar() > 0) return;

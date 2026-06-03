@@ -6,6 +6,7 @@ namespace Hospital_Management.Databases
 {
     public class BillingDB
     {
+        //Show All Bills
         public static DataTable GetAllBilling()
         {
             DataTable dt = new DataTable();
@@ -33,7 +34,7 @@ namespace Hospital_Management.Databases
             }
             return dt;
         }
-
+        //Update  And show patients
         public static DataTable GetPatientBill(int patientID)
         {
             DataTable dt = new DataTable();
@@ -63,7 +64,7 @@ namespace Hospital_Management.Databases
             }
             return dt;
         }
-
+        //Recalculate all bills and update them
         public static void RecalculateBill(int patientID)
         {
             using (var conn = DatabaseHelper.GetConnection())

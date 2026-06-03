@@ -10,6 +10,7 @@ namespace Hospital_Management.Forms
         public AddAssignmentForm()
         {
             InitializeComponent();
+            //Loading Patients and Doctors into ComboBoxes
             LoadPatients();
             LoadDoctors();
         }
@@ -29,6 +30,7 @@ namespace Hospital_Management.Forms
             cmbDoctor.DisplayMember = "Name";
             cmbDoctor.ValueMember = "DoctorID";
         }
+        //Save Button Functionality: Validates input and saves the new assignment to the database
 
         private void btnSave_Click(object sender, EventArgs e)
         {

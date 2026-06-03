@@ -18,7 +18,7 @@ namespace Hospital_Management.Forms
             LoadAppointments();
             LoadStats();
         }
-
+        //Update the stats and info of the doctor in the home page
         private void LoadInfo()
         {
             using (var conn = DatabaseHelper.GetConnection())
@@ -43,7 +43,7 @@ namespace Hospital_Management.Forms
                 }
             }
         }
-
+        //Show the Appointments of the doctor in the home page
         private void LoadAppointments()
         {
             using (var conn = DatabaseHelper.GetConnection())
@@ -64,7 +64,7 @@ namespace Hospital_Management.Forms
                 dgvAppointments.DataSource = dt;
             }
         }
-
+        //Load the stats of the doctor in the home page
         private void LoadStats()
         {
             using (var conn = DatabaseHelper.GetConnection())

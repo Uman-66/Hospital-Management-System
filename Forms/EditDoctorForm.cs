@@ -16,7 +16,7 @@ namespace Hospital_Management.Forms
             LoadWards();
             LoadDoctorData();
         }
-
+        //Load the wards in the ComboBox to allow the user to select a ward for the doctor
         private void LoadWards()
         {
             DataTable wards = DoctorDB.GetWards();
@@ -24,7 +24,7 @@ namespace Hospital_Management.Forms
             cmbWard.DisplayMember = "WardName";
             cmbWard.ValueMember = "WardID";
         }
-
+        //Load the existing doctor data into the form fields 
         private void LoadDoctorData()
         {
             DataTable dt = DoctorDB.GetDoctorDetails(_doctorID);
@@ -56,7 +56,7 @@ namespace Hospital_Management.Forms
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-
+        //Delete the doctor from the database and close the form after confirmation
         private void btnDischarge_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("Are you sure you want to discharge this doctor?", "Confirm Discharge", MessageBoxButtons.YesNo) == DialogResult.Yes)

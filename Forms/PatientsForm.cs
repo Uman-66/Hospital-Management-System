@@ -23,7 +23,7 @@ namespace Hospital_Management.Forms
 
 
 
-
+        //Search A Patient by name, ID, or ward and display the results in the DataGridView
         private void btnSearch_Click_1(object sender, EventArgs e)
         {
             string keyword = txtSearch.Text.Trim();
@@ -39,14 +39,14 @@ namespace Hospital_Management.Forms
             dgvPatients.DataSource = dt;
             dgvPatients.Refresh();
         }
-
+        //Add New Patient
         private void btnAdmit_Click_1(object sender, EventArgs e)
         {
             AdmitForm admitForm = new AdmitForm();
             admitForm.ShowDialog();
             LoadPatients();
         }
-
+        //Open  New form to update or delete
 
         private void dgvPatients_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {

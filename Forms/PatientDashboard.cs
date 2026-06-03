@@ -16,7 +16,7 @@ namespace Hospital_Management.Forms
             LoadWelcomeMessage();
             LoadWelcomeData();
         }
-
+        //Load Welcome 
         private void LoadWelcomeMessage()
         {
             using (var conn = DatabaseHelper.GetConnection())
@@ -34,7 +34,7 @@ namespace Hospital_Management.Forms
                 }
             }
         }
-
+        //Show Data in Page 
         private void LoadWelcomeData()
         {
             using (var conn = DatabaseHelper.GetConnection())
@@ -69,7 +69,7 @@ namespace Hospital_Management.Forms
                 }
             }
         }
-
+        //Load  the form in panel
         private void LoadFormIntoPanel(Form form)
         {
             pnlMain.Controls.Clear();
@@ -86,7 +86,7 @@ namespace Hospital_Management.Forms
             PatientInfoForm f = new PatientInfoForm(_userID);
             LoadFormIntoPanel(f);
         }
-
+        
         private void btnMyBill_Click(object sender, EventArgs e)
         {
             PatientBillForm f = new PatientBillForm(_userID);

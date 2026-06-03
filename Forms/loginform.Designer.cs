@@ -130,12 +130,13 @@ namespace Hospital_Management.Forms
             adminButton.FlatAppearance.BorderSize = 0;
             adminButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(28, 78, 150);
             adminButton.FlatStyle = FlatStyle.Flat;
+            adminButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             adminButton.ForeColor = SystemColors.ButtonFace;
             adminButton.Location = new Point(121, 41);
             adminButton.Name = "adminButton";
             adminButton.Size = new Size(170, 106);
             adminButton.TabIndex = 10;
-            adminButton.Text = "button2";
+            adminButton.Text = "Admin";
             adminButton.UseVisualStyleBackColor = false;
             adminButton.Click += button2_Click_1;
             // 
@@ -146,12 +147,13 @@ namespace Hospital_Management.Forms
             doctorButton.FlatAppearance.BorderSize = 0;
             doctorButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(28, 78, 150);
             doctorButton.FlatStyle = FlatStyle.Flat;
+            doctorButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             doctorButton.ForeColor = SystemColors.ButtonFace;
-            doctorButton.Location = new Point(297, 41);
+            doctorButton.Location = new Point(297, 42);
             doctorButton.Name = "doctorButton";
             doctorButton.Size = new Size(161, 106);
             doctorButton.TabIndex = 9;
-            doctorButton.Text = "button1";
+            doctorButton.Text = "Doctor";
             doctorButton.UseVisualStyleBackColor = false;
             doctorButton.Click += doctorButton_Click;
             // 
@@ -162,12 +164,13 @@ namespace Hospital_Management.Forms
             patientButton.FlatAppearance.BorderSize = 0;
             patientButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(28, 78, 150);
             patientButton.FlatStyle = FlatStyle.Flat;
+            patientButton.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             patientButton.ForeColor = SystemColors.ButtonFace;
             patientButton.Location = new Point(464, 41);
             patientButton.Name = "patientButton";
             patientButton.Size = new Size(163, 106);
             patientButton.TabIndex = 8;
-            patientButton.Text = "button3";
+            patientButton.Text = "Patient";
             patientButton.UseVisualStyleBackColor = false;
             patientButton.Click += patientButton_Click;
             // 

@@ -78,7 +78,7 @@ namespace Hospital_Management.Forms
                 }
             }
         }
-
+        //Load the new Prescrptions 
         private void LoadPrescriptions(int patientID)
         {
             using (var conn = DatabaseHelper.GetConnection())
